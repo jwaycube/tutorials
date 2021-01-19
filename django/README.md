@@ -10,5 +10,11 @@ A walkthrough from this [tutorial](https://docs.djangoproject.com/en/3.1/intro/t
 3. Activate environment
 
 
-## 
+## Concepts
 
+1. 
+
+
+## Additional Notes
+
+Cat gif was downloaded from [here](https://giphy.com/gifs/download-IRFQYGCokErS0)
