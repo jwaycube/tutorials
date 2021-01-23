@@ -2,3 +2,4 @@
 *.vscode
 *.gz
 *.egg-info
+node_modules
