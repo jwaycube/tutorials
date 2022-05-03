@@ -32,6 +32,14 @@ It allows a single go function to handle multiple incoming types. E.g. summing a
 ## Go Rune is Different from Go Byte
 Chinese Characters can be multiple bytes but it is considered 1 rune.
 
+## Building Packages
+`go build .` this creates a local file which can be run. (very similar to install, but the build result is within the directory)
+
+## Installing Packages
+`go install example/user/hello` builds an executable binary and then installs it as `$GOBIN/go/bin/hello`. If GOBIN is set, it will be installed there, else it goes into GOPATH.
+
+This is useful for creating terminal commands.
+
 ## Next Steps
 
 https://go.dev/doc/code
