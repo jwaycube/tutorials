@@ -23,3 +23,15 @@ In this case "github.com/sirupsen/" is the path to the module "logrus" is the mo
 ## Part2
 
 Define a module and do a linkage of module to one contained in the local path
+
+
+## Generics
+
+It allows a single go function to handle multiple incoming types. E.g. summing all float items and all int items
+
+## Go Rune is Different from Go Byte
+Chinese Characters can be multiple bytes but it is considered 1 rune.
+
+## Next Steps
+
+https://go.dev/doc/code
