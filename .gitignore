@@ -3,3 +3,4 @@
 *.gz
 *.egg-info
 node_modules
+*env
