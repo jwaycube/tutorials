@@ -1,24 +1,52 @@
+import React, { useState } from "react";
 import Form from "./components/Form";
+import { nanoid } from "nanoid";
 import Todo from "./components/Todo";
 import FilterButton from "./components/FilterButton";
 
 
-
 function App(props) {
-  const taskList = props.tasks?.map((task)=>
-  <Todo name={task.name} completed={task.completed} id={task.id} key={task.id}/>)
+  const [tasks, setTasks] = useState(props.tasks);
+  function addTask(name) {
+    const newTask = { id: `todo-${nanoid()}`, name, completed: false };
+    setTasks([...tasks, newTask]);
+  }
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
+  }
+  function toggleTaskCompleted(id) {
+    const updatedTasks = tasks.map((task) => {
+      // if this task has the same ID as the edited task
+      if (id === task.id) {
+        // use object spread to make a new object
+        // whose `completed` prop has been inverted
+        return {...task, completed: !task.completed}
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
+  const taskList = tasks.map((task) => (
+    <Todo
+      id={task.id}
+      name={task.name}
+      completed={task.completed}
+      key={task.id}
+      toggleTaskCompleted={toggleTaskCompleted}
+      deleteTask={deleteTask}
+    />
+  ));
+  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
+  const headingText = `${taskList.length} ${tasksNoun} remaining`;
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <Form/>
+      <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
-        <FilterButton/>
-        <FilterButton/>
-        <FilterButton/>
+        <FilterButton />
       </div>
-      <h2 id="list-heading">
-        3 tasks remaining
-      </h2>
+      {headingText}
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
