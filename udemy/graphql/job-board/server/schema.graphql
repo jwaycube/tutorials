@@ -1,0 +1,18 @@
+type Query {
+    job: [Job!] # this can return [], but elements in list cannot be null
+}
+
+type Company {
+    id: ID!
+    name: String!
+    description: String
+}
+
+type Job {
+    id: ID!
+    """the __date__ when the job is published, in ISO-8601 format. E.g. `2022-12-31`"""
+    date: String!
+    title: String!
+    company: Company!
+    description: String
+}
