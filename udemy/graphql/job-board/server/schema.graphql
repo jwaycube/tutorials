@@ -1,11 +1,14 @@
 type Query {
-    job: [Job!] # this can return [], but elements in list cannot be null
+    company(id: ID!): Company
+    job(id: ID!): Job
+    jobs: [Job!] # this can return [], but elements in list cannot be null
 }
 
 type Company {
     id: ID!
     name: String!
     description: String
+    jobs: [Job!]!
 }
 
 type Job {

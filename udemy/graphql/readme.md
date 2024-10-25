@@ -4,6 +4,7 @@
 
 A schema first approach to API design. 
 - Clear contract between client and server. Enabling clients to avoid overfetching/underfetching and fetch just enough data
+- Graph Query Language: called a "Graph" because you can start from a node and traverse the node down recursively to get information you need. "Query Language" because you can focus on the "what" for the queries.
 
 ## Technology
 
@@ -17,9 +18,10 @@ The
     - When done in an array, an individual item of the array cannot be `Null`
 
 
+
 ## Best Practices
 
-- Single version
+- Single Version
 
 ## Community Debate
 
