@@ -18,10 +18,10 @@ The
     - When done in an array, an individual item of the array cannot be `Null`
 
 
-
 ## Best Practices
 
 - Single Version
+- Authentication is independent of graphql. It is dependent on the underlying protocol like http and websockers
 
 ## Community Debate
 
