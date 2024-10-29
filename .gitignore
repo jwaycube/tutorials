@@ -4,5 +4,6 @@
 *.egg-info
 *node_modules
 *env
+apollo-supergraph/retail-supergraph-main/publish.txt
 python-s3-thumbnail/PIL
 python-s3-thumbnail/Pillow-5.1.0.dist-info
