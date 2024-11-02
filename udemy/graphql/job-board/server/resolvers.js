@@ -18,7 +18,10 @@ export const resolvers = {
         }
         return job;
     },
-    jobs: () => getJobs(),
+    jobs: () => {
+      console.log("Test test")
+      return getJobs()}
+      ,
   },
   Mutation: {
     createJob: (_root, {input: {title, description} }, { user } ) => {
