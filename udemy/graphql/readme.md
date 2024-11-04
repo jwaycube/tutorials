@@ -8,12 +8,10 @@ A schema first approach to API design.
 
 ## Technology
 
-The 
 - `type` is the interface 
 - `resolver` is the implementation that will return an actual value
 - Can expose over HTTP
     - `POST` request is used for every query containing a json with `query` as the key
-
 - Nullability: the server must provide the field when requested by client, cannot return a `Null` object
     - When done in an array, an individual item of the array cannot be `Null`
 
@@ -22,6 +20,7 @@ The
 
 - Single Version
 - Authentication is independent of graphql. It is dependent on the underlying protocol like http and websockers
+- Use data loaders to handle the n+1 problem
 
 ## Community Debate
 

@@ -19,7 +19,6 @@ export const resolvers = {
         return job;
     },
     jobs: () => {
-      console.log("Test test")
       return getJobs()}
       ,
   },
@@ -56,7 +55,7 @@ export const resolvers = {
   },
   // resolver function will always take precedence
   Job: {
-    company: (job) => getCompany(job.companyId),
+    company: (job, _args, {companyLoader}) => companyLoader.load(job.companyId),
     date: (job) => toIsoDate(job.createdAt)
   }
 };

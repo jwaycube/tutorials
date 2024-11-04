@@ -6,6 +6,7 @@ import {readFile} from 'node:fs/promises';
 import { authMiddleware, handleLogin } from './auth.js';
 import {resolvers} from './resolvers.js';
 import { getUser } from './db/users.js';
+import {createCompanyLoader} from './db/companies.js'
 
 const PORT = 9000;
 
@@ -19,13 +20,15 @@ const apolloServer = new ApolloServer({ typeDefs, resolvers });
 await apolloServer.start();
 
 async function getContext( {req} ) {
+
   console.log(req.auth.sub)
+  const companyLoader = createCompanyLoader()
+  const context = {companyLoader}
   if (req.auth) {
-    
     const user = await getUser(req.auth.sub)
-    return { user }
+    context.user = user
   }
-  return {}
+  return context
 }
 
 app.use('/graphql', apolloMiddleware(apolloServer, {context: getContext}));
