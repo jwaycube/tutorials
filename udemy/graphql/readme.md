@@ -21,6 +21,10 @@ A schema first approach to API design.
 - Single Version
 - Authentication is independent of graphql. It is dependent on the underlying protocol like http and websockers
 - Use data loaders to handle the n+1 problem
+- Pagination
+    - Offset Based: It is a number that indicates how many rows to offset
+    - Cursor Based: It points to a specific entry and to list items after that entry
+    - Offset based is simpler than cursor based pagination
 
 ## Community Debate
 
@@ -33,3 +37,7 @@ A schema first approach to API design.
 - Understanding the concepts: Watch and focus on understanding the concepts. 
 - Implementation: spend time afterwards to focus on implementation
 - Examples are at github.com/graphql-by-example
+
+## Pagination
+
+

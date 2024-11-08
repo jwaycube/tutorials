@@ -1,7 +1,7 @@
 type Query {
     company(id: ID!): Company
     job(id: ID!): Job
-    jobs: [Job!] # this can return [], but elements in list cannot be null
+    jobs(limit: Int, offset: Int): JobSubList 
 }
 
 type Mutation {
@@ -37,3 +37,7 @@ input UpdateJobInput {
     description: String
 }
 
+type JobSubList {
+  items: [Job!]! # this can return [], but elements in list cannot be null
+  totalCount: Int!
+}
