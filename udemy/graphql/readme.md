@@ -25,6 +25,12 @@ A schema first approach to API design.
     - Offset Based: It is a number that indicates how many rows to offset
     - Cursor Based: It points to a specific entry and to list items after that entry
     - Offset based is simpler than cursor based pagination
+- Message Subscription uses websockets instead of HTTP
+- Use [production ready pub/sub environments](https://www.apollographql.com/docs/apollo-server/data/subscriptions#production-pubsub-libraries)
+- Can debug websocket messages using chrome dev tools under "WS" of network tab
+
+## Learnings
+- How hot reload works is through websocket that is injected inside the webpage. So whenever the file is changed the web server is updated for development
 
 ## Community Debate
 
@@ -38,6 +44,12 @@ A schema first approach to API design.
 - Implementation: spend time afterwards to focus on implementation
 - Examples are at github.com/graphql-by-example
 
-## Pagination
+## Outside Module Learnings
+
+- Issues regarding graphql security. This is a [trending thread](https://news.ycombinator.com/item?id=40521518) on this topic.
+- Mainly the issue is safeguarding people from seeing data they shouldn't
 
 
+## Followups
+
+- [Asynchronous Generator function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator): when and why use this?
